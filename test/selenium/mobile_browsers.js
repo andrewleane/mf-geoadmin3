@@ -8,7 +8,7 @@ var create = function(browserName, platform, device) {
     'browserstack.user' : process.env.BROWSERSTACK_USER,
     'browserstack.key' : process.env.BROWSERSTACK_KEY,
     'browserstack.bfcache' : '0',
-    'browserstack.debug' : true // switch this to true to debug (visual logs) 
+    'browserstack.debug' : false // switch this to true to debug (visual logs) 
   };
 }
 
