@@ -18,10 +18,10 @@ var create = function(browserName, platform, device) {
 // https://www.browserstack.com/list-of-browsers-and-platforms?product=automate
 
 var capabilities = [
-    create('iPhone', 'MAC', 'iPhone 5'),
-    create('iPhone', 'MAC', 'iPhone 5S'),
-    create('iPad', 'MAC', 'iPad Air'),
-    create('iPad', 'MAC', 'iPad mini Retina'),
+    //create('iPhone', 'MAC', 'iPhone 5'),
+    //create('iPhone', 'MAC', 'iPhone 5S'),
+    //create('iPad', 'MAC', 'iPad Air'),
+    //create('iPad', 'MAC', 'iPad mini Retina'),
     create('android', 'ANDROID', 'Google Nexus'),
     create('android', 'ANDROID', 'Google Nexus 4'),
     create('android', 'ANDROID', 'Google Nexus 5'),
