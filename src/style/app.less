@@ -46,12 +46,22 @@
   display: none;
 }
 
+.ga-user-select(@val) {
+  -ms-user-select: @val;
+  -moz-user-select: @val;
+  -webkit-user-select: @val;
+}
+
 html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#header, .panel-heading, #footer {
+  .ga-user-select(none);
 }
 
 input::-ms-clear {
@@ -1141,11 +1151,7 @@ input[type=range] {
 .ga-checkbox {
   cursor: pointer;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  .ga-user-select(none);
   
   input[type=checkbox] {
     cursor: inherit;
