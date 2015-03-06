@@ -46,6 +46,7 @@
                   encodeURIComponent(gaPermalink.getHref());
               scope.encodedDocumentTitle = encodeURIComponent(document.title);
               scope.urlShortened = false;
+              scope.embedValue = gaPermalink.getEmbedHref();
 
               // Listen to permalink change events from the scope.
               scope.$on('gaPermalinkChange', function(event) {
@@ -54,6 +55,7 @@
                     encodeURIComponent(gaPermalink.getHref());
                 scope.urlShortened = false;
                 // assuming document.title never change
+                scope.embedValue = gaPermalink.getEmbedHref();
               });
 
               // Function to shorten url
@@ -73,9 +75,37 @@
               scope.selectOnClick = function(e) {
                 e.target.select();
               };
+              scope.showMoreOptions = function() {
+                scope.loadIframe = true;
+              };
+              // Set iframe size variables
+              scope.$watch('iframeSize', function() {
+                if (scope.iframeSize) {
+                  scope.iframeWidth = scope.iframeSize[0];
+                  scope.iframeHeight = scope.iframeSize[1];
+                  scope.contentWidth = {
+                    width: scope.iframeWidth + 40 + 'px',
+                    height: scope.iframeHeight + 200 + 'px'
+                  };
+                }
+              });
+              scope.iframeSize = scope.options.iframeSizes[0].value;
 
               // Be able to disable some widgets on homescreen
               scope.homescreen = $window.navigator.standalone;
+
+              // Load the content of iframe only when necessary
+              element.find('.modal').on('shown.bs.modal', function() {
+                $(this).find('select').focus();
+                scope.$apply(function() {
+                  scope.loadIframe = true;
+                });
+                
+              }).on('hidden.bs.modal', function() {
+                scope.$apply(function() {
+                  scope.loadIframe = false;
+                });
+              });
             }
           };
         });

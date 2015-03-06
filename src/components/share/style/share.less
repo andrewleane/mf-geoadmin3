@@ -1,5 +1,54 @@
 [ga-share] {
+  span a {
+    color: red;
+  }
+  iframe {
+    margin-top: 5px;
+    border: 1px solid #b2b2b2;
+    transition: all 1s ease;
+  }
+  .modal-content, .modal.in .modal-dialog, iframe {
+    max-width: 1000px;
+    transition: all 1s ease;
+  }
+
+  select {
+    width: auto;
+    display: inline-block;
+  }
+
+  .form-inline {
+    display: inline-block;
+
+    label, input {
+      display: inline-block;
+      width: 75px;
+    }
+    label {
+      width: 50px;
+      text-align: right;
+    }
+  }
   
+  .ga-embed-input {
+    display: block;
+    margin-top: 10px;  
+  }
+
+  .modal-header {
+    position: relative;
+    padding: 0px 0px 0px 15px; 
+    button, h4 {
+      display: inline-block;
+    }
+    button {
+      position: absolute;
+      right: 0px;
+      height: 100%;
+      width: 44px;
+    }
+  }
+
   .ga-share-icons, .ga-share-permalink {
     margin-bottom: 15px;
   }
@@ -9,7 +58,7 @@
     padding: 0 6px;
     color: #474949;
     font-size: 24px;
-    
+
     &:hover, &:focus {
       color: #3a3c3c;
       text-decoration: none;
