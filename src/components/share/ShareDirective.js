@@ -87,8 +87,14 @@
                     width: scope.iframeWidth + 40 + 'px',
                     height: scope.iframeHeight + 200 + 'px'
                   };
+                } else {
+                  scope.contentWidth = {
+                    width: '600px',
+                    height: 'auto'
+                  };
                 }
               });
+
               scope.iframeSize = scope.options.iframeSizes[0].value;
 
               // Be able to disable some widgets on homescreen
@@ -100,11 +106,20 @@
                 scope.$apply(function() {
                   scope.loadIframe = true;
                 });
-                
+
               }).on('hidden.bs.modal', function() {
                 scope.$apply(function() {
                   scope.loadIframe = false;
                 });
+              });
+
+              // Display a preview window
+              var previewWindow;
+              element.find('.form-inline a').click(function() {
+                if (previewWindow) {
+                  previewWindow.close();
+                }
+                previewWindow = window.open(scope.embedValue, '_blank', 'width=' + scope.iframeWidth + ', height=' + scope.iframeHeight);
               });
             }
           };

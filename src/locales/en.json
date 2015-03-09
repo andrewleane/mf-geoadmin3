@@ -254,6 +254,7 @@
 	"settings": "Configuration",
 	"share": "Share",
 	"share_disclaimer": "By embedding this map, you agree to <a href='http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/contact.html#copyright.' target='_blank'>the terms of service</a>.",
+	"share_preview": "Show a preview",
 	"shorten_url": "Short URL",
 	"show_more_options": "more ...",
 	"show_more_results": "Load more results ...",

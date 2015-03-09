@@ -1,15 +1,23 @@
 [ga-share] {
-  span a {
+  div a {
     color: red;
   }
+  
   iframe {
-    margin-top: 5px;
     border: 1px solid #b2b2b2;
     transition: all 1s ease;
   }
+  
   .modal-content, .modal.in .modal-dialog, iframe {
-    max-width: 1000px;
     transition: all 1s ease;
+  }
+
+  .modal-content, .modal.in .modal-dialog, .modal-body {
+    min-width: 400px;
+    max-width: 1000px;
+  }
+  .modal-body {
+    overflow: auto;
   }
 
   select {
@@ -32,7 +40,8 @@
   
   .ga-embed-input {
     display: block;
-    margin-top: 10px;  
+    margin-top: 10px;
+    margin-bottom: 5px; 
   }
 
   .modal-header {
