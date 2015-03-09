@@ -119,7 +119,22 @@
                 if (previewWindow) {
                   previewWindow.close();
                 }
-                previewWindow = window.open(scope.embedValue, '_blank', 'width=' + scope.iframeWidth + ', height=' + scope.iframeHeight);
+                previewWindow = window.open(scope.embedValue, '_blank',
+                    'width=' + scope.iframeWidth +
+                    ', height=' + scope.iframeHeight);
+              });
+
+              // Manage minimal size
+              element.find('.form-inline input').blur(function() {
+                if (scope.iframeWidth < 200 || scope.iframeHeight < 200) {
+                  scope.$apply(function() {
+                    if (scope.iframeWidth < 200) {
+                      scope.iframeWidth = 200;
+                    } else if (scope.iframeHeight < 200) {
+                      scope.iframeHeight = 200;
+                    }
+                  });
+                }
               });
             }
           };
